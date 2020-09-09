@@ -6,9 +6,10 @@
 function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
-
-  // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  var balX = 50;
+  var balY = 50;
+  var speedX = 3;
+var speedY = 3;
 }
 
 
@@ -18,9 +19,23 @@ function setup() {
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
 function draw() {
+// Kleur de achtergrond blauw, zodat je het kunt zien
+  background('blue');
+
   // stel vulkleur in
-  fill(100, 100, 255);
+  fill(255, 100, 255);
 
   // teken een cirkel
-  ellipse(50,50,80,80);
+  ellipse(balX,balY,80,80);
+
+  balX = balX + speedX;
+  balY = balY + speedY;
+
+  if(balX >= 1280){
+      speedX = speedX * -1;
+  }
+
+  if (balY >= 720){
+      speedY = speed Y * -1;
+  }
 }
